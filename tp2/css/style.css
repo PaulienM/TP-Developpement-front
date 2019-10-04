@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat|Muli&display=swap');
+
+body {
+    font-family: Muli, sans-serif;
+    text-align: center;
+    margin: 0;
+}
+
+h1, h2, h3 {
+    font-family: Montserrat, sans-serif;
+}
+
+th {
+    background-color: dodgerblue;
+    color: aliceblue;
+}
+
+#content {
+    margin: 3em;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: dodgerblue;
+    padding: 1em;
+    position: sticky;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:active {
+    color: lightblue;
+}
+
+.active {
+    color: lightblue;
+}
+
+table {
+    margin: auto;
+    border-collapse: collapse;
+    border: 1px solid slategrey;
+}
+
+tr:nth-child(odd) {
+    background-color: lightgrey;
+}
+
+td {
+    padding: 2em;
+}
+
+tr:hover {
+    background-color: #c3f1ff;
+}
+
+#index {
+    text-align: left;
+}
+
+tr img {
+    width: 350px;
+}
+
+button {
+    background-color: dodgerblue;
+    color: white;
+    padding: 0.5em;
+    border-radius: 10px;
+    border: 1px solid dodgerblue;
+}
+
+button:hover {
+    color: dodgerblue;
+    background-color: white;
+    border: 1px solid dodgerblue;
+}
