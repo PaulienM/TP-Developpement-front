@@ -13,6 +13,7 @@ h1, h2, h3 {
 th {
     background-color: dodgerblue;
     color: aliceblue;
+    padding: 1em;
 }
 
 #content {
@@ -49,6 +50,10 @@ table {
     border: 1px solid slategrey;
 }
 
+tr {
+    background-color: #ebebeb;
+}
+
 tr:nth-child(odd) {
     background-color: lightgrey;
 }
@@ -58,7 +63,7 @@ td {
 }
 
 tr:hover {
-    background-color: #c3f1ff;
+    background-color: white;
 }
 
 #index {
