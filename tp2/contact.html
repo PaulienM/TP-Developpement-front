@@ -19,11 +19,26 @@
         <h2>Contact</h2>
         <div id="contact">
             <form action="">
-                <span>Nom <input type="text" required></span><br>
-                <span>Prenom <input type="text"></span><br>
-                <span>Email <input type="email" ></span><br>
-                <span>Numero de telephone <input type="number"></span><br>
-                <span>Message <textarea name="" id="" cols="30" rows="10" required></textarea></span><br>
+                <div class="block">
+                    <label for="nom" class="description">Nom</label>
+                    <input type="text" id="nom" required>
+                </div>
+                <div>
+                    <label for="prenom" class="description">Prenom</label>
+                    <input type="text" id="prenom">
+                </div>
+                <div>
+                    <label for="email" class="description">Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div>
+                    <label for="numero" class="description">Numero de telephone</label>
+                    <input type="number" id="numero">
+                </div>
+                <div>
+                    <label for="message" class="description">Message</label>
+                    <textarea id="message" cols="30" rows="10" required></textarea>
+                </div>
                 <input type="submit" value="Envoyer">
             </form>
         </div>

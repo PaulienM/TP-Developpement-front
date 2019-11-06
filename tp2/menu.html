@@ -16,11 +16,17 @@
         <a href="index.html">Acceuil</a><a href="menu.html" class="active">Menu</a><a href="services.html">Services</a><a href="destinations.html">Destinations</a><a href="audio.html">Voyage virtuel : audio</a><a href="video.html">Voyage virtuel : vidéo</a><a href="contact.html">Contact</a>
     </nav>
     <div id="content">
-        <ul>
+        <ul class="no-list-style">
             <li>
                 <h2>Connexion :</h2>
-                <span>Login <input type="text" /></span>
-                <span>Mot de passe <input type="password" /></span>
+                <div>
+                    <label for="login" class="description">Login</label>
+                    <input type="text" id="login">
+                </div>
+                <div>
+                    <label for="mdp" class="description">Mot de passe</label>
+                    <input type="password" id="mdp"/>
+                </div>
             </li>
             <li>
                 <h2>Recherche</h2>

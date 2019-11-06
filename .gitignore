@@ -1,5 +1,6 @@
-tp1/audio/
-tp1/video/
+*/audio/
+*/video/
+*/image/
 *.idea/
 *.mp4
 *.wav

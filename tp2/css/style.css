@@ -87,3 +87,14 @@ button:hover {
     background-color: white;
     border: 1px solid dodgerblue;
 }
+
+.description {
+    display: inline-block;
+    width: 10rem;
+    text-align: right;
+}
+
+.no-list-style {
+    list-style: none;
+    padding: 0;
+}
