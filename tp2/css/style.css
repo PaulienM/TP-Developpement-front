@@ -21,14 +21,17 @@ th {
 }
 
 nav {
-    display: flex;
-    justify-content: space-around;
     background-color: dodgerblue;
     padding: 1em;
     position: sticky;
     top: 0px;
     left: 0px;
     right: 0px;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-around;
 }
 
 nav a {
@@ -97,4 +100,27 @@ button:hover {
 .no-list-style {
     list-style: none;
     padding: 0;
+}
+
+.dropdown {
+    display: none;
+}
+
+.menu-list {
+    display: inline-block;
+}
+
+.menu-list li {
+    float: left;
+    width: 12em;
+}
+
+#navbar li:hover ul {
+    display: block;
+    float: none;
+    position: static;
+}
+
+.dropdown li {
+    position: relative;
 }
