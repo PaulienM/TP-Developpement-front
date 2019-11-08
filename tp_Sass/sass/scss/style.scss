@@ -1,0 +1,157 @@
+// Question 1
+//$element: 4;
+//@for $i from 1 through $element {
+//  .taille-#{$i} {
+//    width: (100% / $element) * $i;
+//  }
+//}
+
+
+// Question 2
+//@mixin generer_class_taille(){
+//  $element: 4;
+//  @for $i from 1 through $element {
+//    .taille-#{$i} {
+//      width: (100% / $element) * $i;
+//    }
+//  }
+//}
+//@include generer_class_taille
+
+
+// Question 3
+//$i: 0;
+//$tailles: "petite", "standard", "moyenne", "grande";
+//@each $element in $tailles {
+//  .taille-#{$element} {
+//    $i:$i+1;
+//    width: (100% / length($tailles)) * $i;
+//  }
+//}
+
+
+// Question 4
+//@mixin tableau_tailles($tailles) {
+//  $i: 0;
+//  @each $element in $tailles {
+//    .taille-#{$element} {
+//      $i:$i+1;
+//      width: (100% / length($tailles)) * $i;
+//    }
+//  }
+//}
+//
+//$tailles: "petite", "standard", "moyenne", "grande";
+//@include tableau_tailles($tailles);
+
+
+// Question 5
+//@mixin tableau_tailles($classe,$tailles) {
+//  $i: 0;
+//  @each $element in $tailles {
+//    .#{$classe}-#{$element} {
+//      $i:$i+1;
+//      width: (100% / length($tailles)) * $i;
+//    }
+//  }
+//}
+//
+//$tailles: "petite", "standard", "moyenne", "grande";
+//@include tableau_tailles("bouton", $tailles);
+
+
+// Question 6
+//@function returnFirstInArray($array){
+//  @return nth($array, 1);
+//}
+//$tailles: "petite", "standard", "moyenne", "grande";
+//p {
+//  content:returnFirstInArray($tailles);
+//}
+
+
+// Question 7
+//@function returnFirstInArray($array){
+//  @return nth($array, -1);
+//}
+//$tailles: "petite", "standard", "moyenne", "grande";
+//p {
+//  content:returnFirstInArray($tailles);
+//}
+
+
+// Question 8
+$destinations: (
+  espagne: "Espagne",
+  maroc: "Maroc",
+  bresil: "Brésil",
+  caraibes: "Les îles Caraibes");
+
+
+// Question 9
+//@each $key, $value in $destinations {
+//  .ville-#{$key}::before {
+//    display: block;
+//    content: "#{$value}";
+//  }
+//}
+
+
+// Question 10
+//@mixin displayContent($array, $class:"class", $position: "before") {
+//  @each $key, $value in $array {
+//    .#{$class}-#{$key}::#{$position} {
+//      display: block;
+//      content: "#{$value}";
+//    }
+//  }
+//}
+//@include displayContent($destinations,"pays")
+
+
+// Question 11
+$reseaux: (
+  facebook: (#0033FF, #FFFFFF),
+  twitter: (#4EBCFF, #FFFFFF),
+  linkedin: (#3734FF, #FFFFFF),
+  instagram: (#FF007B, #FFBD92),
+  pinterest: (#ff0055, #FFFFFF),
+  youtube: (#FF0000, #FFFFFF)
+);
+
+
+// Question 12
+//@mixin displayContent($array, $class:"class") {
+//  @each $key, $value in $array {
+//    .#{$class}-#{$key} {
+//      background: #{nth($value,1)};
+//      color: #{nth($value,2)};
+//    }
+//  }
+//}
+//@include displayContent($reseaux,"fa");
+//.fa {
+//  font-size: 20rem !important;
+//}
+
+
+// Question 14
+@mixin displayContent($array, $eclaircissementBg: 1, $mode:"dark", $class:"class") {
+  @each $key, $value in $array {
+    @if($mode == "dark") {
+      .#{$class}-#{$key} {
+        background: #{darken(nth($value, 1), $eclaircissementBg)};
+        color: #{nth($value,1)};
+      }
+    } @else {
+      .#{$class}-#{$key} {
+        background: #{lighten(nth($value, 1), $eclaircissementBg)};
+        color: #{nth($value,1)};
+      }
+    }
+  }
+}
+@include displayContent($reseaux, 30%, "dark", "fa");
+.fa {
+  font-size: 20rem !important;
+}
