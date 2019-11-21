@@ -5,13 +5,13 @@ const espagne = ["Barcelone", "Madrid", "Seville", "Bilbao"];
 
 function verifyCountry() {
     let ville = document.getElementById("ville").value;
-    if (france.indexOf(ville) !== -1) {
+    if (france.includes(ville)) {
         alertWelcome("France");
-    } else if (allemagne.indexOf(ville) !== -1) {
+    } else if (allemagne.includes(ville)) {
         alertWelcome("Allemagne");
-    } else if (angleterre.indexOf(ville) !== -1) {
+    } else if (angleterre.includes(ville)) {
         alertWelcome("Angleterre");
-    } else if (espagne.indexOf(ville) !== -1) {
+    } else if (espagne.includes(ville)) {
         alertWelcome("Espagne");
     } else {
         event.preventDefault();
