@@ -2,7 +2,7 @@ let randomNumber = Math.floor((Math.random() * 11));
 
 console.log(randomNumber);
 
-const hardMode = 1;
+const hardMode = 1; //Mettre à 1 pour perdre au bout de trois essaies. Sinon, nombre d'essais illimité
 
 let userNumber;
 
@@ -34,14 +34,14 @@ function verifyResult() {
 
 function winAlert() {
     if (nbTry === 1) {
-        alert("Felicitation, tu as trouvé du premier coup");
+        document.getElementById("result").innerHTML = "Felicitation, tu as trouvé du premier coup";
     } else {
-        alert(`Bravo, tu as gagné en ${nbTry} coups`);
+        document.getElementById("result").innerHTML = `Bravo, tu as gagné en ${nbTry} coups`;
     }
 }
 
 function loseAlert() {
-    alert("Désolé mais tu as perdu");
+    document.getElementById("result").innerHTML = "Désolé mais tu as perdu";
 }
 
 window.addEventListener("load", openDialog);
