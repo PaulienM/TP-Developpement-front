@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <meta name="description=" content="Agence de voyage grenobloise"/>
+    <meta name="keywords" content="agence, voyages, mer, plage, bronzage" />
+    <meta name="author" content="Paulien Marange" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Mon agence</h1>
+    </header>
+    <nav id="navbar">
+        <ul class="no-list-style menu-list">
+            <li><a href="index.html">Acceuil</a></li>
+            <li>
+                <a id="menu" href="menu.html" class="active">Menu</a>
+                <ul class="no-list-style dropdown">
+                    <li><a href="menu.html">connexion</a></li>
+                    <li><a href="menu.html">Recherche</a></li>
+                    <li><a href="menu.html">Reservation</a></li>
+                </ul>
+            </li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="audio.html">Voyage virtuel : audio</a></li>
+            <li><a href="video.html">Voyage virtuel : vidéo</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+        <ul class="no-list-style">
+            <li>
+                <h2>Connexion :</h2>
+                <div>
+                    <label for="login" class="description">Login</label>
+                    <input type="text" id="login">
+                </div>
+                <div>
+                    <label for="mdp" class="description">Mot de passe</label>
+                    <input type="password" id="mdp"/>
+                </div>
+            </li>
+            <li>
+                <h2>Recherche</h2>
+                <input type="text" placeholder="Rechercher">
+            </li>
+            <li>
+                <h2>Réservation</h2>
+            </li>
+            <li>
+                <h2>Promotions</h2>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

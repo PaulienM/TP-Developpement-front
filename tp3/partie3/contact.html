@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Contact</title>
+    <meta name="description=" content="Agence de voyage grenobloise"/>
+    <meta name="keywords" content="agence, voyages, mer, plage, bronzage" />
+    <meta name="author" content="Paulien Marange" />
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Mon agence</h1>
+    </header>
+    <nav id="navbar">
+        <ul class="no-list-style menu-list">
+            <li><a href="index.html">Acceuil</a></li>
+            <li>
+                <a id="menu" href="menu.html">Menu</a>
+                <ul class="no-list-style dropdown">
+                    <li><a href="menu.html">connexion</a></li>
+                    <li><a href="menu.html">Recherche</a></li>
+                    <li><a href="menu.html">Reservation</a></li>
+                </ul>
+            </li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="destinations.html">Destinations</a></li>
+            <li><a href="audio.html">Voyage virtuel : audio</a></li>
+            <li><a href="video.html">Voyage virtuel : vidéo</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+        <h2>Contact</h2>
+        <div id="contact">
+            <form action="">
+                <div class="block">
+                    <label for="nom" class="description">Nom</label>
+                    <input type="text" id="nom" required>
+                </div>
+                <div>
+                    <label for="prenom" class="description">Prenom</label>
+                    <input type="text" id="prenom">
+                </div>
+                <div>
+                    <label for="email" class="description">Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div>
+                    <label for="numero" class="description">Numero de telephone</label>
+                    <input type="number" id="numero">
+                </div>
+                <div>
+                    <label for="message" class="description">Message</label>
+                    <textarea id="message" cols="30" rows="10" required></textarea>
+                </div>
+                <input type="submit" value="Envoyer">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
