@@ -13,62 +13,22 @@
         <h1>Mon agence</h1>
     </header>
     <nav id="navbar">
-        <ul class="no-list-style menu-list">
-            <li><a href="index.html">Acceuil</a></li>
-            <li>
-                <a id="menu" href="menu.html">Menu</a>
-                <ul class="no-list-style dropdown">
-                    <li><a href="menu.html">connexion</a></li>
-                    <li><a href="menu.html">Recherche</a></li>
-                    <li><a href="menu.html">Reservation</a></li>
-                </ul>
-            </li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="destinations.html" class="active">Destinations</a></li>
-            <li><a href="audio.html">Voyage virtuel : audio</a></li>
-            <li><a href="video.html">Voyage virtuel : vidéo</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
     </nav>
     <div id="content">
         <h2>Les destinations</h2>
         <table summary="Liste des destinations">
-            <tr>
-                <th>Pays</th>
-                <th>Circuit</th>
-                <th>Image</th>
-                <th>Prix</th>
-                <th>Réservation</th>
-            </tr>
-            <tr>
-                <td>France</td>
-                <td>Paris/Grenoble</td>
-                <td><img src="image/grenoble.jpg" alt=""></td>
-                <td>3000€</td>
-                <td><button>Réserver</button></td>
-            </tr>
-            <tr>
-                <td>Brésil</td>
-                <td>Rio/Brasilia</td>
-                <td><img src="image/rio.jpg" alt=""></td>
-                <td>10€</td>
-                <td><button>Réserver</button></td>
-            </tr>
-            <tr>
-                <td>Australie</td>
-                <td>Camberra/Sydney</td>
-                <td><img src="image/sydney.jpg" alt=""></td>
-                <td>1000€</td>
-                <td><button>Réserver</button></td>
-            </tr>
-            <tr>
-                <td>Japon</td>
-                <td>Coupe du monde</td>
-                <td><img src="image/japon.jpg" alt=""></td>
-                <td>40 000€</td>
-                <td><button>Réserver</button></td>
-            </tr>
+            <tbody  id="destination-tables">
+                <tr>
+                    <th>Pays</th>
+                    <th>Circuit</th>
+                    <th>Image</th>
+                    <th>Prix</th>
+                    <th>Réservation</th>
+                </tr>
+            </tbody>
         </table>
     </div>
 </body>
+<script src="js/travel-table.js"></script>
+<script src="js/navbar.js"></script>
 </html>
