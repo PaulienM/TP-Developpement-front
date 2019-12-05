@@ -18,20 +18,23 @@ const tableTr = `
 const form = `
 <form>
     <div>
-        <label for="country">Pays</label>
-        <input type="text" id="country">
+        <label for="input-country">Pays</label>
+        <input type="text" id="input-country">
     </div>
     <div>
-        <label for="country">Pays</label>
-        <input type="text" id="country">
+        <label for="input-circuit">Circuit</label>
+        <input type="text" id="input-circuit">
     </div>
     <div>
-        <label for="country">Pays</label>
-        <input type="text" id="country">
+        <label for="input-image">Image</label>
+        <input type="text" id="input-image">
     </div>
     <div>
-        <label for="country">Pays</label>
-        <input type="text" id="country">
+        <label for="input-price">Prix</label>
+        <input type="number" id="input-price">
+    </div>
+    <div>
+        <input type="submit">
     </div>
 </form>
 `;
@@ -65,7 +68,7 @@ function modifyDestination(destination, index) {
 }
 
 function removeDestination(event) {
-    index = event.toElement.value;
+    let index = event.toElement.value;
     destinations.splice(index, 1);
     displayDestinations();
     addEvent("remove-button", removeDestination);
@@ -78,12 +81,21 @@ function addEvent(elementClass, action) {
     }
 }
 
-function displayFormToModify() {
-
+function displayFormToModify(event) {
+    let index = event.toElement.value;
+    let destination = destinations[index];
+    document.getElementById("form-destination").innerHTML = `
+    <h3>Modifier la destination</h3>
+    ${form}
+    `;
+    document.getElementById("input-country").value = destination.country;
+    document.getElementById("input-circuit").value = destination.circuit;
+    document.getElementById("input-image").value = destination.image;
+    document.getElementById("input-price").value = destination.price;
 }
 
 window.addEventListener("load", function () {
     displayDestinations();
     addEvent("remove-button", removeDestination);
-    addEvent("modify-button", modifyEvent);
+    addEvent("modify-button", displayFormToModify);
 });
