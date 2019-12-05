@@ -124,3 +124,25 @@ button:hover {
 .dropdown li {
     position: relative;
 }
+
+.remove-button {
+    background-color: #FF0000;
+    border-color: #FF0000;
+}
+
+.remove-button:hover {
+    color: #FF0000;
+    background-color: white;
+    border-color: #FF0000;
+}
+
+.modify-button {
+    background-color: green;
+    border-color: green;
+}
+
+.modify-button:hover {
+    color: green;
+    background-color: white;
+    border-color: green;
+}
