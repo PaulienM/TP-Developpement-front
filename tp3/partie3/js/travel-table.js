@@ -1,4 +1,3 @@
-console.log("la");
 const destinations = [
     {country: "France", circuit: "Paris/Grenoble", image: "image/grenoble.jpg", price: 3000},
     {country: "Brésil", circuit: "Rio/Brasilia", image: "image/rio.jpg", price: 10},
