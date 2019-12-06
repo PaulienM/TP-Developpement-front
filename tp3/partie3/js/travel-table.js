@@ -16,27 +16,25 @@ const tableTr = `
 `;
 
 const form = `
-<form>
-    <div>
-        <label for="input-country">Pays</label>
-        <input type="text" id="input-country">
-    </div>
-    <div>
-        <label for="input-circuit">Circuit</label>
-        <input type="text" id="input-circuit">
-    </div>
-    <div>
-        <label for="input-image">Image</label>
-        <input type="text" id="input-image">
-    </div>
-    <div>
-        <label for="input-price">Prix</label>
-        <input type="number" id="input-price">
-    </div>
-    <div>
-        <input type="submit">
-    </div>
-</form>
+<div>
+    <label for="input-country">Pays</label>
+    <input type="text" id="input-country">
+</div>
+<div>
+    <label for="input-circuit">Circuit</label>
+    <input type="text" id="input-circuit">
+</div>
+<div>
+    <label for="input-image">Image</label>
+    <input type="text" id="input-image">
+</div>
+<div>
+    <label for="input-price">Prix</label>
+    <input type="number" id="input-price">
+</div>
+<div>
+    <button id="submit-destination">Valider</button>
+</div>
 `;
 
 function displayDestinations() {
@@ -57,21 +55,41 @@ function displayDestinations() {
     });
 }
 
-function createDestination(destination) {
-    destinations.push(destination);
-    displayDestinations();
+function getDestinationFormFrom() {
+    return {
+        country: document.getElementById("input-country").value,
+        circuit: document.getElementById("input-circuit").value,
+        image:  document.getElementById("input-image").value,
+        price: document.getElementById("input-price").value,
+    };
 }
 
-function modifyDestination(destination, index) {
+function loadEvents() {
+    addEvent("remove-button", removeDestination);
+    addEvent("modify-button", displayFormToModify);
+    document.getElementById("add-destination").addEventListener("click", displayFormToCreate);
+}
+
+function createDestination() {
+    let destination = getDestinationFormFrom();
+    destinations.push(destination);
+    displayDestinations();
+    loadEvents();
+}
+
+function modifyDestination(event) {
+    let index = event.toElement.value;
+    let destination = getDestinationFormFrom();
     destinations[index] = destination;
     displayDestinations();
+    loadEvents();
 }
 
 function removeDestination(event) {
     let index = event.toElement.value;
     destinations.splice(index, 1);
     displayDestinations();
-    addEvent("remove-button", removeDestination);
+    loadEvents();
 }
 
 function addEvent(elementClass, action) {
@@ -79,6 +97,15 @@ function addEvent(elementClass, action) {
     for (let i = 0; i < button.length; i++) {
         button[i].addEventListener("click", action)
     }
+}
+
+function displayFormToCreate(event) {
+    let index = event.toElement.value;
+    document.getElementById("form-destination").innerHTML = `
+    <h3>Créer une destination</h3>
+    ${form}
+    `;
+    document.getElementById("submit-destination").addEventListener("click", createDestination);
 }
 
 function displayFormToModify(event) {
@@ -92,10 +119,11 @@ function displayFormToModify(event) {
     document.getElementById("input-circuit").value = destination.circuit;
     document.getElementById("input-image").value = destination.image;
     document.getElementById("input-price").value = destination.price;
+    document.getElementById("submit-destination").value = index;
+    document.getElementById("submit-destination").addEventListener("click", modifyDestination);
 }
 
 window.addEventListener("load", function () {
     displayDestinations();
-    addEvent("remove-button", removeDestination);
-    addEvent("modify-button", displayFormToModify);
+    loadEvents();
 });
