@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+    <button id="button">Ajax</button>
+</body>
+<script type="text/javascript">
+    let obj = {envoi:'coucou'};
+    $('#button').click(function () {
+        $.ajax({
+            url: "http://localhost:8000",
+            type:"POST",
+            data:obj
+        }).done(function( arg ) {
+            alert( "Données : " + arg );
+        })
+    })
+</script>
+</html>
