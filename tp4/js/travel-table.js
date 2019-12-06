@@ -6,17 +6,18 @@ const destinations = [
 ];
 
 
-const form = `<form>
+const form = `
+<form>
   <div class="form-row">
-    <div class="col-md-4 mb-3">
+    <div class="col-md-5">
       <label for="input-country">Pays</label>
       <input type="text" class="form-control" id="input-country" required>
     </div>
-    <div class="col-md-4 mb-3">
+    <div class="col-md-7">
       <label for="input-circuit">Circuit</label>
       <input type="text" class="form-control" id="input-circuit" required>
     </div>
-    <div class="col-md-4 mb-3">
+    <div class="col-md-8">
       <label for="input-image">Image</label>
       <div class="input-group">
         <div class="input-group-prepend">
@@ -25,14 +26,11 @@ const form = `<form>
         <input type="text" class="form-control" id="input-image"  aria-describedby="prepend-image" required>
       </div>
     </div>
-  </div>
-  <div class="form-row">
-    <div class="col-md-6 mb-3">
+    <div class="col-md-4">
       <label for="input-price">Prix</label>
       <input type="text" class="form-control" id="input-price" required>
     </div>
   </div>
-  <button id="submit-destination" class="btn btn-primary">Valider</button>
 </form>
 `;
 
@@ -115,16 +113,14 @@ function displayFormToCreate(event) {
 function displayFormToModify(event) {
     let index = event.toElement.value;
     let destination = destinations[index];
-    document.getElementById("form-destination").innerHTML = `
-    <h3>Modifier la destination</h3>
-    ${form}
-    `;
+    document.getElementById("form-destination").innerHTML = form;
     document.getElementById("input-country").value = destination.country;
     document.getElementById("input-circuit").value = destination.circuit;
     document.getElementById("input-image").value = destination.image;
     document.getElementById("input-price").value = destination.price;
     document.getElementById("submit-destination").value = index;
     document.getElementById("submit-destination").addEventListener("click", modifyDestination);
+    $("#form-modal").modal('show')
 }
 
 window.addEventListener("load", function () {
