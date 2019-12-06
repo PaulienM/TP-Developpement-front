@@ -5,53 +5,58 @@ const destinations = [
     {country: "Japon", circuit: "Coupe du monde", image: "image/japon.jpg", price: 40000}
 ];
 
-const tableTr = `
-<tr>
-    <th>Pays</th>
-    <th>Circuit</th>
-    <th>Image</th>
-    <th>Prix</th>
-    <th>Réservation</th>
-</tr>
-`;
 
-const form = `
-<div>
-    <label for="input-country">Pays</label>
-    <input type="text" id="input-country">
-</div>
-<div>
-    <label for="input-circuit">Circuit</label>
-    <input type="text" id="input-circuit">
-</div>
-<div>
-    <label for="input-image">Image</label>
-    <input type="text" id="input-image">
-</div>
-<div>
-    <label for="input-price">Prix</label>
-    <input type="number" id="input-price">
-</div>
-<div>
-    <button id="submit-destination">Valider</button>
-</div>
+const form = `<form>
+  <div class="form-row">
+    <div class="col-md-4 mb-3">
+      <label for="input-country">Pays</label>
+      <input type="text" class="form-control" id="input-country" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="input-circuit">Circuit</label>
+      <input type="text" class="form-control" id="input-circuit" required>
+    </div>
+    <div class="col-md-4 mb-3">
+      <label for="input-image">Image</label>
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="prepend-image">@</span>
+        </div>
+        <input type="text" class="form-control" id="input-image"  aria-describedby="prepend-image" required>
+      </div>
+    </div>
+  </div>
+  <div class="form-row">
+    <div class="col-md-6 mb-3">
+      <label for="input-price">Prix</label>
+      <input type="text" class="form-control" id="input-price" required>
+    </div>
+  </div>
+  <button id="submit-destination" class="btn btn-primary">Valider</button>
+</form>
 `;
 
 function displayDestinations() {
-    let tableContent = document.getElementById("destination-tables").innerHTML = tableTr;
+    let tableContent = document.getElementById("destination-tables").innerHTML = "";
     destinations.forEach((element, index) => {
         document.getElementById("destination-tables").innerHTML +=
-            `<tr>
-                <td>${element.country}</td>
-                <td>${element.circuit}</td>
-                <td><img src="${element.image}" alt=""></td>
-                <td>${element.price}€</td>
-                <td>
-                    <button>Réserver</button>
-                    <button class="remove-button" value="${index}">Supprimer</button>
-                    <button class="modify-button" value="${index}">Modifier</button>
-                </td>
-            </tr>`
+            `
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <div class="card">
+                    <img src="${element.image}" class="card-img-top" alt="">
+                    <div class="card-body">
+                        <h5 class="card-title">${element.country}</h5>
+                        <p class="card-text">${element.circuit}</p>
+                        <button class="btn btn-primary">Réserver</button>
+                        <button class="btn btn-danger remove-button" value="${index}">Supprimer</button>
+                        <button class="btn btn-success modify-button" value="${index}">Modifier</button>
+                    </div>
+                    <div class="card-footer text-muted">
+                        ${element.price}€
+                    </div>
+                </div>
+            </div>
+            `
     });
 }
 
@@ -101,11 +106,10 @@ function addEvent(elementClass, action) {
 
 function displayFormToCreate(event) {
     let index = event.toElement.value;
-    document.getElementById("form-destination").innerHTML = `
-    <h3>Créer une destination</h3>
-    ${form}
-    `;
+    document.getElementById("title-modal").innerText = "Créer une destination";
+    document.getElementById("form-destination").innerHTML = form;
     document.getElementById("submit-destination").addEventListener("click", createDestination);
+    $("#form-modal").modal('show')
 }
 
 function displayFormToModify(event) {

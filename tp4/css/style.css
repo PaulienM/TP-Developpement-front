@@ -27,6 +27,24 @@ nav {
     right: 0px;
 }
 
+nav {
+    z-index: 1;
+}
+
+.menu-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+}
+
+nav a:active {
+    color: lightblue;
+}
+
 table {
     margin: auto;
     border-collapse: collapse;
@@ -57,20 +75,6 @@ tr img {
     width: 350px;
 }
 
-button {
-    background-color: dodgerblue;
-    color: white;
-    padding: 0.5em;
-    border-radius: 10px;
-    border: 1px solid dodgerblue;
-}
-
-button:hover {
-    color: dodgerblue;
-    background-color: white;
-    border: 1px solid dodgerblue;
-}
-
 .description {
     display: inline-block;
     width: 10rem;
@@ -82,10 +86,6 @@ button:hover {
     padding: 0;
 }
 
-.dropdown {
-    display: none;
-}
-
 .menu-list {
     display: inline-block;
 }
@@ -93,36 +93,4 @@ button:hover {
 .menu-list li {
     float: left;
     width: 12em;
-}
-
-#navbar li:hover ul {
-    display: block;
-    float: none;
-    position: static;
-}
-
-.dropdown li {
-    position: relative;
-}
-
-.remove-button {
-    background-color: #FF0000;
-    border-color: #FF0000;
-}
-
-.remove-button:hover {
-    color: #FF0000;
-    background-color: white;
-    border-color: #FF0000;
-}
-
-.modify-button {
-    background-color: green;
-    border-color: green;
-}
-
-.modify-button:hover {
-    color: green;
-    background-color: white;
-    border-color: green;
 }
