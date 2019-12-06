@@ -21,30 +21,10 @@ th {
 }
 
 nav {
-    background-color: dodgerblue;
-    padding: 1em;
     position: sticky;
     top: 0px;
     left: 0px;
     right: 0px;
-}
-
-.menu-list {
-    display: flex;
-    justify-content: space-around;
-}
-
-nav a {
-    text-decoration: none;
-    color: white;
-}
-
-nav a:active {
-    color: lightblue;
-}
-
-.active {
-    color: lightblue;
 }
 
 table {
