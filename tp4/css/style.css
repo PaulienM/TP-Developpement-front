@@ -94,3 +94,33 @@ tr img {
     float: left;
     width: 12em;
 }
+
+@media screen and (max-width: 576px){
+    .bg-primary {
+        background-color: #FF0000 !important;
+    }
+}
+
+@media screen and (min-width: 576px){
+    .bg-primary {
+        background-color: #ff00d3 !important;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .bg-primary {
+        background-color: #ac00ff !important;
+    }
+}
+
+@media screen and (min-width: 992px){
+    .bg-primary {
+        background-color: #007bff !important;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px){
+    .card-body {
+        background-color: #e4ff6a;
+    }
+}
