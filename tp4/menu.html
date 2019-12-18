@@ -28,20 +28,29 @@
     </nav>
     <div id="content">
         <ul class="no-list-style">
-            <li>
+            <li class="jumbotron">
                 <h2>Connexion :</h2>
-                <div>
-                    <label for="login" class="description">Login</label>
-                    <input type="text" id="login">
-                </div>
-                <div>
-                    <label for="mdp" class="description">Mot de passe</label>
-                    <input type="password" id="mdp"/>
-                </div>
+                <form class="row">
+                    <div class="form-group col-md-6 col-sm-12">
+                        <label for="login">Login</label>
+                        <input type="text" class="form-control" id="login">
+                    </div>
+                    <div class="form-group col-md-6 col-sm-12">
+                        <label for="mdp">Mot de passe</label>
+                        <input type="text" class="form-control" id="mdp">
+                    </div>
+                </form>
             </li>
-            <li>
+            <li class="alert alert-primary">
                 <h2>Recherche</h2>
-                <input type="text" placeholder="Rechercher">
+                <div>
+                    <div class="input-group">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text" id="recherchePrepend">@</span>
+                        </div>
+                        <input type="text" class="form-control" id="recherche" aria-describedby="recherchePrepend" required>
+                    </div>
+                </div>
             </li>
             <li>
                 <h2>Réservation</h2>

@@ -29,28 +29,28 @@
     <div id="content">
         <h2>Contact</h2>
         <div id="contact">
-            <form action="">
-                <div class="block">
-                    <label for="nom" class="description">Nom</label>
-                    <input type="text" id="nom" required>
+            <form class="text-left row">
+                <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                    <label for="nom">Nom</label>
+                    <input type="text" class="form-control" id="nom">
                 </div>
-                <div>
-                    <label for="prenom" class="description">Prenom</label>
-                    <input type="text" id="prenom">
+                <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                    <label for="prenom">Prenom</label>
+                    <input type="text" class="form-control" id="prenom">
                 </div>
-                <div>
-                    <label for="email" class="description">Email</label>
-                    <input type="email" id="email">
+                <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email">
                 </div>
-                <div>
-                    <label for="numero" class="description">Numero de telephone</label>
-                    <input type="number" id="numero">
+                <div class="form-group col-lg-3 col-md-6 col-sm-12">
+                    <label for="numero">Numero de telephone</label>
+                    <input type="number" class="form-control" id="numero">
                 </div>
-                <div>
-                    <label for="message" class="description">Message</label>
-                    <textarea id="message" cols="30" rows="10" required></textarea>
+                <div class="form-group col-12">
+                    <label for="message">Message</label>
+                    <textarea class="form-control" id="message" rows="10" cols="30"></textarea>
                 </div>
-                <input type="submit" value="Envoyer">
+                <button type="submit" class="btn btn-primary">Envoyer</button>
             </form>
         </div>
     </div>
