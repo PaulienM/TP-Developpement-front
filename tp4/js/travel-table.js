@@ -78,6 +78,7 @@ function createDestination() {
     destinations.push(destination);
     displayDestinations();
     loadEvents();
+    $("#form-modal").modal('hide');
 }
 
 function modifyDestination(event) {
@@ -86,6 +87,7 @@ function modifyDestination(event) {
     destinations[index] = destination;
     displayDestinations();
     loadEvents();
+    $("#form-modal").modal('hide');
 }
 
 function removeDestination(event) {
@@ -126,4 +128,8 @@ function displayFormToModify(event) {
 window.addEventListener("load", function () {
     displayDestinations();
     loadEvents();
+    $("#form-modal").on('hidden.bs.modal', function () {
+        document.getElementById("submit-destination").removeEventListener("click", createDestination);
+        document.getElementById("submit-destination").removeEventListener("click", modifyDestination);
+    })
 });
